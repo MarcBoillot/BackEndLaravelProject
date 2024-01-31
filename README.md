@@ -1,12 +1,13 @@
 ## Context 
 
-Il s'agit de mettre en place un site de e-commerce pour des artisans. Le site devra mettre en avant le savoir faire et les produits. Le client pourra visiter le site sans s'enregistrer, voir les différents produits, voir les artisans, filtrer sa recherche et ajouter des produits a son panier. Pour valider son panier un client non enregistrer devra s'enregistrer. Une fois le client enregistré il pourra accéder a son profil et modifier ses informations mais aussi a l'historique de ses commandes. 
-Le parcours du client sera simple et intuitif et l'optimisation lui permettra d'accéder faciliment aux produits et commander les produits qu'il désire. Il pourra suivre l'avancement de sa commande voir l'annuler. 
-Ce site sera accès sur la découverte des artisans Francais il servira de vitrine grace à des pages de présentation de leur histoire et de leurs produit accompagnés de photos. 
-L'artisan devra obligatoirement s'enregistrer pour accéder à sa page personnelle et il pourra modifier des éléments de sa page comme sa photo de profil ou son histoire. Il pourra mettre en avant certains de ses produits grace à des photos et sa description, ajouter des produits modifier et supprimer ses produits.Il peut aussi  consulter la page des autres artisans voir leurs produits. Il recevera une notification de commandes spécifiques qui son customable et valider sa prise en compte ou refuser la prise en compte. 
-Le site permettra au cllient d'avoir la qualité et le savoir faire francais et de se rapprocher de l'artisan grace à son histoire et celle de son produit. L'artisan aura une meilleure visibilité grace au système de partage sur les réseaux sociaux et l'efficience du site. Le site aura un bon référencement avec le slug.
 
-Le site respectera 5 principes du GreenIT
+Il s'agit de créer une plateforme de commerce en ligne dédiée aux artisans. Le site mettra en avant leur savoir-faire et leurs produits. Les visiteurs pourront explorer le site sans s'inscrire, découvrir les divers produits, consulter les profils des artisans, filtrer leurs recherches et ajouter des articles à leur panier. Pour finaliser leur commande, les utilisateurs non enregistrés devront créer un compte. Une fois inscrits, les clients auront accès à leur profil, où ils pourront mettre à jour leurs informations et consulter l'historique de leurs commandes.
+
+Le parcours client sera intuitif, favorisant un accès aisé aux produits et une commande simple. Les clients pourront suivre l'évolution de leur commande et, si nécessaire, l'annuler. Le site se concentrera sur la découverte des artisans français, offrant des pages dédiées présentant leur histoire et leurs produits à travers des photos. Les artisans devront s'inscrire pour accéder à leur espace personnel, où ils pourront personnaliser leur page avec des éléments tels que leur photo de profil et leur histoire. Ils pourront mettre en avant certains produits grâce à des photos et des descriptions, ajouter, modifier ou supprimer des articles, et consulter les pages d'autres artisans. Les artisans recevront des notifications pour des commandes spécifiques, personnalisables, leur permettant de les accepter ou de les refuser.
+
+Le site vise à offrir aux clients une expérience mettant en avant la qualité et le savoir-faire français, en favorisant une connexion avec les artisans à travers leurs histoires et celles de leurs produits. Les artisans bénéficieront d'une meilleure visibilité grâce à un partage facile sur les réseaux sociaux et à l'efficacité du site. Le référencement du site sera optimisé, notamment avec l'utilisation du slug.
+
+Le site sera conçu en respectant cinq principes du GreenIT pour minimiser son impact environnemental.
 
 ## Conception
 
