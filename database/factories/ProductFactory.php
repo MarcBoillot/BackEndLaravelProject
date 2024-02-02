@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'unit_price' => fake()-> randomFloat(2, 0, 10000),
-            'name' => fake()->name(),
+            'name' => fake()->unique()->word(),
             'description' => fake()->text(),
             //enum composé de trois elements (waiting, validate, unvalidate)
             'status' => rand(0, 2),
