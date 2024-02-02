@@ -18,14 +18,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        //besoin d'appeler les seeders dans l'ordre
         $this->call([
             UserSeeder::class,
             CrafterSeeder::class,
             AddressSeeder::class,
             CategorySeeder::class,
             MaterialSeeder::class,
-//            ProductSeeder::class,
-//            OrderSeeder::class,
+            ProductSeeder::class,
+            OrderSeeder::class,
         ]);
     }
 }
