@@ -50,10 +50,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    function address(): HasMany {
+    function addresses(): HasMany {
             return $this->hasMany(Address::class);
         }
-    function order(): HasMany {
+    function orders(): HasMany {
                 return $this->hasMany(Order::class);
             }
     function crafter(): HasOne {

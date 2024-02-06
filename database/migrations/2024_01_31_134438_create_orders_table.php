@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
+
             $table->string('delivery_address');
             $table->string('facturation_address');
             $table->foreignUuid('user_id')->constrained();

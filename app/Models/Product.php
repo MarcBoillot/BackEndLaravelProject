@@ -23,7 +23,7 @@ class Product extends Model
         'color',
         'customizable',
         'is_active',
-
+        'user_id'
     ];
     function categories(): BelongsToMany {
         return $this->belongsToMany(Category::class);
@@ -31,7 +31,7 @@ class Product extends Model
     function materials(): BelongsToMany {
         return $this->belongsToMany(Material::class);
     }
-    function orderProduct(): BelongsTo {
-        return $this->belongsTo(OrderProduct::class);
+    function orders(): BelongsToMany {
+        return $this->belongsToMany(Order::class, 'order_product')->withPivot(['product_name', 'unit_price', 'quantity']);
     }
 }
