@@ -14,6 +14,6 @@ class CrafterSeeder extends Seeder
      */
     public function run(): void
     {
-        Crafter::factory(50)->create();
+        Crafter::factory(20)->create();
     }
 }

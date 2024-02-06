@@ -15,7 +15,6 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->constrained();
             $table->integer('address_type');
-
             $table->string('address_name');
             $table->string('postal_code');
             $table->string('address_firstname');

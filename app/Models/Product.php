@@ -31,7 +31,7 @@ class Product extends Model
     function materials(): BelongsToMany {
         return $this->belongsToMany(Material::class);
     }
-    function orderProduct(): BelongsTo {
-        return $this->belongsTo(OrderProduct::class);
+    function orders(): BelongsToMany {
+        return $this->belongsToMany(Order::class, 'order_product')->withPivot(['product_name', 'unit_price', 'quantity']);
     }
 }

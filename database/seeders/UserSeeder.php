@@ -15,11 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()
-            ->count(50)
-//            ->has(Order::factory(3)
-//                ->hasProducts(3)
-//            )
-            ->create();
+        User::factory(50)->create();
+//        User::factory(50)->create()->each(function($order) {
+//            $orders = Order::inRandomOrder()->first();
+//            $order->categories()->attach($orders);
+//        });
+
     }
 }

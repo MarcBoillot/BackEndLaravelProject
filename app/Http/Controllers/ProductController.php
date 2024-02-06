@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -64,6 +68,16 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product=Product::all()->find($id);
+        $product->categories()->detach();
+        $product->orderProduct()->detach();
         return $product->delete($product);
+    }
+    public function productsByCategory($categoryId){
+//        $products=Product::where('id','9b4389fb-d387-4c4d-979c-e3c062dad9d0')->first()->categories;
+//        dd($request->all());
+        $products = Product::whereHas('categories', function (Builder $query ) use ($categoryId) {
+            $query->where('category_id',$categoryId);
+        })->get();
+        return $products;
     }
 }
