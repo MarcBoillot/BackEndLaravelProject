@@ -49,6 +49,7 @@ class OrderController extends Controller
             "delivery_address"=>$request->get('delivery_address'),
             "facturation_address"=>$request->get('facturation_address'),
             "order_status"=>$request->get('order_status'),
+            "order_price"=>$request->get('order_price'),
             "order_date"=>$request->get('order_date'),
         ]);
         return Order::all()->last();
@@ -57,8 +58,9 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-
+        $order=Order::all()->find($id);
+        return $order->delete($order);
     }
 }

@@ -16,10 +16,5 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::factory(50)->create();
-//        User::factory(50)->create()->each(function($order) {
-//            $orders = Order::inRandomOrder()->first();
-//            $order->categories()->attach($orders);
-//        });
-
     }
 }

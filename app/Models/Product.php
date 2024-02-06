@@ -23,7 +23,7 @@ class Product extends Model
         'color',
         'customizable',
         'is_active',
-
+        'user_id'
     ];
     function categories(): BelongsToMany {
         return $this->belongsToMany(Category::class);

@@ -24,16 +24,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
-            "unit_price"=>$request->get('unit_price'),
-            "name"=>$request->get('name'),
-            "description"=>$request->get('description'),
-            "status"=>$request->get('status'),
-            "color"=>$request->get('color'),
-            "customizable"=>$request->get('customizable'),
-            "is_active"=>$request->get('is_active'),
-        ]);
-        return Product::all()->last();
+        $product = new Product($request->validate());
+        $product->save();
+//        Product::create([
+//            "unit_price"=>$request->get('unit_price'),
+//            "name"=>$request->get('name'),
+//            "description"=>$request->get('description'),
+//            "status"=>$request->get('status'),
+//            "color"=>$request->get('color'),
+//            "customizable"=>$request->get('customizable'),
+//            "is_active"=>$request->get('is_active'),
+//            "user_id"=>$request->get('user_id')
+//        ]);
+        return $product;
     }
 
     /**
@@ -69,7 +72,7 @@ class ProductController extends Controller
     {
         $product=Product::all()->find($id);
         $product->categories()->detach();
-        $product->orderProduct()->detach();
+
         return $product->delete($product);
     }
     public function productsByCategory($categoryId){

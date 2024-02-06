@@ -17,16 +17,10 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-//        OrderProduct::all()->each(function ($order) {
-//            Product::factory()->create(['product_id' => $order->id]);
-//        });
-//        $categories = Category::factory()->count(5)->create();
         //need to build product and after attach the model Category
         Product::factory(50)->create()->each(function($product){
             $categories = Category::inRandomOrder()->first();
             $product->categories()->attach($categories);
-//            $crafters= Crafter::inRandomOrder()->first();
-//            $product->crafters()->attach($crafters);
         });
     }
 }
