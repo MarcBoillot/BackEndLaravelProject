@@ -17,19 +17,30 @@ class StoreProductRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+//     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'unit_price'=>'request|numeric|min:1',
-            'name'=>'request|string|max:50',
-            'description'=>'request|text|max:255',
-            'status'=>'request|integer',
-            'color'=>'request|string|min:1',
-            'customizable'=>'request|integer',
-            'is_active'=>'request|boolean',
-            'user_id'=>'request|exists:user.id',
+            'unit_price'=>'required|numeric',
+            'name'=>'required|string',
+            'description'=>'required|string',
+            'status'=>'required|integer',
+            'color'=>'required|string',
+            'customizable'=>'required|integer',
+            'is_active'=>'required|boolean',
+            'user_id'=>'required|uuid',
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'unit_price.required' => 'A unit price is required',
+            'name.required' => 'A name is required',
+            'description.required' => 'A description is required',
+            'status.required' => 'A status is required',
+            'is_active.required' => 'A boolean is required',
+            'user_id.required' => 'A user id is required',
         ];
     }
 }
