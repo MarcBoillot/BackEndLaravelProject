@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\StoreProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
@@ -22,9 +23,9 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        $product = new Product($request->validate());
+        $product = new Product($request->validated());
         $product->save();
 //        Product::create([
 //            "unit_price"=>$request->get('unit_price'),
@@ -36,7 +37,7 @@ class ProductController extends Controller
 //            "is_active"=>$request->get('is_active'),
 //            "user_id"=>$request->get('user_id')
 //        ]);
-        return $product;
+        return response()->json(['product' => $product], 201);
     }
 
     /**
