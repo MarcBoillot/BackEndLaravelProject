@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
@@ -51,19 +52,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product,$id)
+    public function update(UpdateProductRequest $request)
     {
-        $product=Product::all()->find($id);
-        $product->update([
-            "unit_price"=>$request->get('unit_price'),
-            "name"=>$request->get('name'),
-            "description"=>$request->get('description'),
-            "status"=>$request->get('status'),
-            "color"=>$request->get('color'),
-            "customizable"=>$request->get('customizable'),
-            "is_active"=>$request->get('is_active'),
-        ]);
-        return Product::all()->last();
+        $product = new Product($request->validated());
+        $product->save();
+        return $product;
     }
 
     /**
