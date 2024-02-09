@@ -29,7 +29,7 @@ class UpdateProductRequest extends FormRequest
             "color"=>'required|string',
             "customizable"=>'required|integer',
             "is_active"=>'required|boolean',
-            "user_id"=>'required|exists:uuid'
+            "user_id"=>'required|uuid|exists:users,id'
         ];
     }
     public function messages(): array
