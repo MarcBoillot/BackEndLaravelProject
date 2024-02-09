@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CrafterController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -24,17 +25,24 @@ Route::middleware(['auth:sanctum'])->group(function (){
     });
     Route::get('/users', [UserController::class,'index']);
     Route::get('/user/{id}', [UserController::class,'show']);
+
     Route::patch('/product/{product}',[ProductController::class,'update']);
     Route::delete('/product/{id}',[ProductController::class,'destroy']);
     Route::post('/product',[ProductController::class,'store']);
+
     Route::post('/category',[CategoryController::class,'store']);
     Route::patch('/category/{id}',[CategoryController::class,'update']);
     Route::delete('/category/{id}',[CategoryController::class,'destroy']);
+
     Route::get('orders',[OrderController::class,'index']);
     Route::get('/order/{id}', [OrderController::class,'show']);
     Route::post('/order',[OrderController::class,'store']);
     Route::patch('/order/{id}',[OrderController::class,'update']);
     Route::delete('/order/{id}',[OrderController::class,'destroy']);
+
+    Route::post('/crafter', [CrafterController::class,'store']);
+    Route::patch('/crafter/{crafter}',[CrafterController::class,'update']);
+    Route::delete('/crafter/{crafter}', [CrafterController::class, 'destroy']);
 });
 
 
@@ -47,6 +55,10 @@ Route::middleware(['auth:sanctum'])->group(function (){
 
 Route::get('/products', [ProductController::class,'index']);
 Route::get('/product/{id}', [ProductController::class,'show']);
+
+Route::get('/crafters', [CrafterController::class,'index']);
+Route::get('/crafter/{crafter}', [CrafterController::class,'show']);
+
 
 Route::get('/products/category/{id}',[ProductController::class,'productsByCategory']);
 
