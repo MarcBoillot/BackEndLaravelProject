@@ -16,13 +16,13 @@ Le site sera conçu en respectant cinq principes du GreenIT pour minimiser son i
 
 ## RGPD 
 
-# Avertissement
+### Avertissement
 ______________________________________________________________
 Un message a l'attention des utilisateurs du site sera affiché
 Il permettra a l'utilisateur de prendre connaissance des obligations légales concernant ses données personnelles et de leurs utilisations.
 Les utilisateurs auront accès a leurs données et pourront demander la modification ou l'effacement de ces dernières. 
 
-# Cadre légal
+### Cadre légal
 ______________________________________________________________
 Une base légale sera mise en place pour le traitement des données personnelles respectant le cadre légal du RGPD.
 **Article 6 du RGPD** :
