@@ -51,13 +51,17 @@ Le consentement doit être libre, spécifique, éclairé et univoque pour être 
 Si le traitement porte une atteinte excessive aux droits et libertés des personnes, l’intérêt légitime ne pourra fonder légalement sa mise en œuvre.
 ________________________________________________________________
 
-|Finalité|Données collectés|Base légale|
-|---|---|---|
-|Fonctionnement du site pour visiteur|Cookies utilisateurs|Contrat|
-|Enregistrement client|Address ° name ° e-mail|Contrat|
-|Enregistrement crafter|Address number siret name|Obligation légale|
-|Facturation|Address postale|Contrat|
-|Verification de la majorité|Birthdate|Contrat|
+|Finalité|Données collectés|Base légale|Supprimable ou refusable|
+|---|---|---|---|
+|Fonctionnement du site pour visiteur|Cookies utilisateurs|Contrat|NON par ceux utilisés pour le fonctionnement|
+|Enregistrement client|Address|Contrat|OUI si aucune commande|
+|Enregistrement client|E-mail|Contrat|OUI|
+|Enregistrement client|Name|Contrat|OUI|
+|Enregistrement crafter|Siret name|Obligation légale|NON|
+|Enregistrement crafter|Address|Contrat|NON|
+|Enregistrement crafter|Phone number|Contrat|OUI|
+|Facturation|Address postale|Contrat|NON|
+|Verification de la majorité|Birthdate|Contrat|OUI supprimable avec le compte|
 
 
 
