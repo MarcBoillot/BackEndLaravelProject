@@ -54,7 +54,7 @@ ________________________________________________________________
 |Finalité|Données collectés|Base légale|
 |---|---|---|
 |Fonctionnement du site pour visiteur|Cookies utilisateurs|Contrat|
-|Enregistrement client|Address-name-e-mail|Contrat|
+|Enregistrement client|Address ° name ° e-mail|Contrat|
 |Enregistrement crafter|Address number siret name|Obligation légale|
 |Facturation|Address postale|Contrat|
 |Verification de la majorité|Birthdate|Contrat|
