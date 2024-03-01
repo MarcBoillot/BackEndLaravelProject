@@ -43,6 +43,12 @@ Une base légale sera mise en place pour le traitement des données personnelles
 *La sauvegarde des intérêts vitaux* : le traitement est nécessaire à la sauvegarde des intérêts vitaux de la personne concernée, ou d’un tiers.
 
 La base légale sera principalement orientée *contrat* ce qui permettra de conserver seulement les données liées a l'adresse postale principalement pour la facturation.
+
+#### Conditions
+
+Le consentement doit être libre, spécifique, éclairé et univoque pour être valablement recueilli et constituer dès lors la base légale du traitement. Si l’une de ces conditions n’est pas remplie, le consentement ne peut pas constituer la base légale du traitement.
+
+Si le traitement porte une atteinte excessive aux droits et libertés des personnes, l’intérêt légitime ne pourra fonder légalement sa mise en œuvre.
 ________________________________________________________________
 
 |Finalité|Données collectés|Base légale|
