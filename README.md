@@ -17,6 +17,11 @@ Le site sera conçu en respectant cinq principes du GreenIT pour minimiser son i
 ## RGPD 
 |Finalité|Données collectés|Base légale|
 |---|---|---|
+|Paiement|coordonnées banquaire|Contrat légal|
+|Fonctionnement du site pour visiteur|cookies utilisateurs|obligations légales|
+|Enregistrement client|address name et e-mail|obligation légale|
+|Enregistrement crafter|address number siret name|Obligation légale|
+|Facturation|address postale|obligation légale|
 
 
 
