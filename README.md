@@ -8,6 +8,17 @@ Le parcours client sera intuitif, favorisant un accès aisé aux produits et une
 Le site vise à offrir aux clients une expérience mettant en avant la qualité et le savoir-faire français, en favorisant une connexion avec les artisans à travers leurs histoires et celles de leurs produits. Les artisans bénéficieront d'une meilleure visibilité grâce à un partage facile sur les réseaux sociaux et à l'efficacité du site. Le référencement du site sera optimisé, notamment avec l'utilisation du slug.
 
 Le site sera conçu en respectant cinq principes du GreenIT pour minimiser son impact environnemental.
+    Pas de caroussel 
+    Pas de fonctionalités non essentielles
+    Supprimer les fonctions non utilisées
+    Optimisation des images
+    Eviter les animations
+
+## RGPD 
+|Finalité|Données collectés|Base légale|
+|
+
+
 
 ## Conception
 
