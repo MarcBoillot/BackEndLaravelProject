@@ -16,7 +16,7 @@ Le site sera conçu en respectant cinq principes du GreenIT pour minimiser son i
 
 ## RGPD 
 |Finalité|Données collectés|Base légale|
-|
+|---|---|---|
 
 
 
