@@ -25,13 +25,23 @@ Les utilisateurs auront accès a leurs données et pourront demander la modifica
 ### Cadre légal
 ______________________________________________________________
 Une base légale sera mise en place pour le traitement des données personnelles respectant le cadre légal du RGPD.
+
 **Article 6 du RGPD** :
+
 *Le consentement* : la personne a consenti au traitement de ses données ;
+
 *Le contrat* : le traitement est nécessaire à l’exécution ou à la préparation d’un contrat avec la personne concernée ;
+
 *L’obligation légale* : le traitement est imposé par des textes légaux ;
+
 *La mission d’intérêt public* : le traitement est nécessaire à l’exécution d’une mission d’intérêt public ;
+
 *L’intérêt légitime* : le traitement est nécessaire à la poursuite d’intérêts légitimes de l’organisme qui traite les données ou d’un tiers, dans le strict respect des droits et intérêts des personnes dont les données sont traitées ;
+
 *La sauvegarde des intérêts vitaux* : le traitement est nécessaire à la sauvegarde des intérêts vitaux de la personne concernée, ou d’un tiers.
+
+La base légale sera principalement orientée *contrat* ce qui permettra de conserver seulement les données liées a l'adresse postale.
+________________________________________________________________
 
 |Finalité|Données collectés|Base légale|
 |---|---|---|
