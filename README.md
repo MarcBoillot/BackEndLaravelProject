@@ -53,11 +53,11 @@ ________________________________________________________________
 
 |Finalité|Données collectés|Base légale|
 |---|---|---|
-|Paiement|Coordonnées banquaire|Contrat légal|
-|Fonctionnement du site pour visiteur|Cookies utilisateurs|Obligations légales|
-|Enregistrement client|Address name et e-mail|Obligation légale|
+|Fonctionnement du site pour visiteur|Cookies utilisateurs|Contrat|
+|Enregistrement client|Address-name-e-mail|Contrat|
 |Enregistrement crafter|Address number siret name|Obligation légale|
-|Facturation|Address postale|Obligation légale|
+|Facturation|Address postale|Contrat|
+|Verification de la majorité|Birthdate|Contrat|
 
 
 
