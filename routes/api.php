@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 /*
@@ -20,7 +21,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 */
 
 Route::middleware(['auth:sanctum'])->group(function (){
-    Route::get('/user', function (Request $request) {
+    Route::get('/me', function (Request $request) {
         return $request->user();
     });
     Route::get('/users', [UserController::class,'index']);
@@ -52,18 +53,15 @@ Route::middleware(['auth:sanctum'])->group(function (){
 
 //Route::post('/register',[RegisteredUserController::class,'store']);
 
-
 Route::get('/products', [ProductController::class,'index']);
 Route::get('/product/{id}', [ProductController::class,'show']);
-
 Route::get('/crafters', [CrafterController::class,'index']);
 Route::get('/crafter/{crafter}', [CrafterController::class,'show']);
-
-
 Route::get('/products/category/{id}',[ProductController::class,'productsByCategory']);
-
 Route::get('categories',[CategoryController::class,'index']);
 Route::get('/category/{id}', [CategoryController::class,'show']);
+
+
 
 
 

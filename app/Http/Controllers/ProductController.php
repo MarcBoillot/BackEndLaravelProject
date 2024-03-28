@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
@@ -52,10 +50,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        $product = new Product($request->validated());
-        $product->save();
+
+        $this->authorize('update', $product);
+        $product->update($request->validated());
         return $product;
     }
 
@@ -73,7 +72,7 @@ class ProductController extends Controller
 //        $products=Product::where('id','9b4389fb-d387-4c4d-979c-e3c062dad9d0')->first()->categories;
 //        dd($request->all());
         $products = Product::whereHas('categories', function (Builder $query ) use ($categoryId) {
-            $query->where('category_id',$categoryId);
+            $query->where('category_name',$categoryId);
         })->get();
         return $products;
     }
