@@ -15,6 +15,12 @@ class UserController extends Controller
         return User::all();
     }
 
+    public function me(Request $request)
+    {
+        return $request->user();
+    }
+
+
     /**
      * Store a newly created resource in storage.
      */
