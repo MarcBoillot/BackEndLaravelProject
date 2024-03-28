@@ -21,9 +21,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 */
 
 Route::middleware(['auth:sanctum'])->group(function (){
-    Route::get('/me', function (Request $request) {
+    Route::get('/user', function (Request $request) {
         return $request->user();
     });
+//    Route::get('/user', [UserController::class,'me']);
     Route::get('/users', [UserController::class,'index']);
     Route::get('/user/{id}', [UserController::class,'show']);
 
@@ -51,8 +52,7 @@ Route::middleware(['auth:sanctum'])->group(function (){
 //Route::apiResource('products', ProductController::class);
 
 
-//Route::post('/register',[RegisteredUserController::class,'store']);
-
+Route::post('/register',[RegisteredUserController::class,'store']);
 Route::get('/products', [ProductController::class,'index']);
 Route::get('/product/{id}', [ProductController::class,'show']);
 Route::get('/crafters', [CrafterController::class,'index']);
