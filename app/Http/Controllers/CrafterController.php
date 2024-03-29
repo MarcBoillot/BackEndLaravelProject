@@ -11,9 +11,9 @@ class CrafterController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Crafter $crafters)
+    public function index()
     {
-       return $crafters->all();
+       return Crafter::with('user')->get();
     }
 
     /**
@@ -36,9 +36,9 @@ class CrafterController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Crafter $crafter)
     {
-        return Crafter::find($id);
+        return $crafter->load('user.addresses','user.orders');
     }
 
     /**
