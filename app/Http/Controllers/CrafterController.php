@@ -11,6 +11,7 @@ class CrafterController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // WITH make a request before fetch all crafters with get methode
     public function index()
     {
        return Crafter::with('user')->get();
@@ -36,9 +37,11 @@ class CrafterController extends Controller
     /**
      * Display the specified resource.
      */
+    //inject dependencies with query builder after we add a request with LOAD because crafter also create and user.addresses use relation with crafters and users
     public function show(Crafter $crafter)
     {
-        return $crafter->load('user.addresses','user.orders');
+        return $crafter->load('user');
+//        return $crafter->load('user.orders');
     }
 
     /**
