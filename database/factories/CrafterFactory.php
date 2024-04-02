@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Material;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,7 +24,7 @@ class CrafterFactory extends Factory
             'story' => fake()->text(),
             'crafting_process' => fake()->text(),
             'location' => fake()->streetAddress(),
-            'material_preference' => fake()->name(),
+            'material_preference' => fake()->word(),
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Crafter;
+use App\Models\Material;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -19,6 +20,8 @@ class ProductSeeder extends Seeder
     {
         //need to build product and after attach the model Category
         Product::factory(50)->create()->each(function($product){
+            $materials = Material::inRandomOrder()->first();
+            $product->materials()->attach($materials);
             $categories = Category::inRandomOrder()->first();
             $product->categories()->attach($categories);
         });

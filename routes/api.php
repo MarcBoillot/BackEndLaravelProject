@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrafterController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -45,13 +46,17 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::post('/crafter', [CrafterController::class,'store']);
     Route::patch('/crafter/{crafter}',[CrafterController::class,'update']);
     Route::delete('/crafter/{crafter}', [CrafterController::class, 'destroy']);
+
+    Route::post('/material', [MaterialController::class,'store']);
+    Route::post('/material/{material}', [MaterialController::class,'update']);
+    Route::post('/material', [MaterialController::class,'destroy']);
 });
 
 
 //route define by apiResource
 //Route::apiResource('products', ProductController::class);
 
-
+Route::get('/materials',[MaterialController::class,'index']);
 Route::post('/register',[RegisteredUserController::class,'store']);
 Route::get('/products', [ProductController::class,'index']);
 Route::get('/product/{id}', [ProductController::class,'show']);

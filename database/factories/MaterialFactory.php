@@ -18,7 +18,6 @@ class MaterialFactory extends Factory
     {
         return [
             'material_name' => fake()->word(),
-
         ];
     }
 }

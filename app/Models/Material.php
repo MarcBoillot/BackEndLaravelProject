@@ -14,14 +14,11 @@ class Material extends Model
     use HasUuids;
 
     protected $fillable = [
-        'order_status',
-        'order_price',
-        'order_date',
-        'delivery_address',
-        'facturation_address',
-        'user_id'
+        'material_name'
     ];
-    function products(): BelongsToMany {
-                    return $this->belongsToMany(Product::class);
-                }
+
+    function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
