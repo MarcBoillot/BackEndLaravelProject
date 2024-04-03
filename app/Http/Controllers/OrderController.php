@@ -20,15 +20,25 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        Order::create([
-            "delivery_address"=>$request->get('delivery_address'),
-            "facturation_address"=>$request->get('facturation_address'),
-            "user_id"=>$request->get('user_id'),
-            "order_status"=>$request->get('order_status'),
-            "order_price"=>$request->get('order_price'),
-            "order_date"=>$request->get('order_date'),
+        $data = $request->validate([
+            'cartItems' => 'required|array',
+            'totalPrice' => 'required|numeric',
+            'totalQuantity' => 'required|integer',
         ]);
-        return Order::all()->last();
+        $order = Order::create([
+            'delivery_address' => $request->get('delivery_address'),
+            'facturation_address' => $request->get('facturation_address'),
+            'user_id' => $request->get('user_id'),
+            'order_status' => 'pending', // Vous pouvez définir le statut de commande initial ici
+            'order_price' => $data['totalPrice'],
+            'order_date' => now(), // Vous pouvez définir la date de commande ici
+        ]);
+
+        // Ajouter les détails des articles de panier à la commande
+        foreach ($data['cartItems'] as $item) {
+            $order->products()->attach($item['id'], ['quantity' => $item['quantity']]);
+        }
+        return $order;
     }
 
     /**
