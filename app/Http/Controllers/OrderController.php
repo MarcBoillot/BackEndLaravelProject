@@ -29,14 +29,14 @@ class OrderController extends Controller
             'delivery_address' => $request->get('delivery_address'),
             'facturation_address' => $request->get('facturation_address'),
             'user_id' => $request->get('user_id'),
-            'order_status' => 'pending', // Vous pouvez définir le statut de commande initial ici
+            'order_status' => '1', // Vous pouvez définir le statut de commande initial ici
             'order_price' => $data['totalPrice'],
             'order_date' => now(), // Vous pouvez définir la date de commande ici
         ]);
 
         // Ajouter les détails des articles de panier à la commande
         foreach ($data['cartItems'] as $item) {
-            $order->products()->attach($item['id'], ['quantity' => $item['quantity']]);
+            $order->products()->attach($item['id'], ['quantity' => $item['quantity'],'product_name'=>$item['name'],'unit_price'=>$item['unit_price']]);
         }
         return $order;
     }
