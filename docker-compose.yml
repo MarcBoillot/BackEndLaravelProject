@@ -1,0 +1,114 @@
+version: '3.8'
+services:
+    vuejs:
+        build:
+            context: ../../frontendProjetLaravel/laravelProjetFrontEnd
+            dockerfile: ../../frontendProjetLaravel/laravelProjetFrontEnd/Dockerfile
+        networks:
+            - app-network
+
+    #     Service pour MariaDB
+    db:
+        image: mariadb
+        restart: always
+        #        ports:
+        #            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: CraftedBy
+            MYSQL_ROOT_USER: root
+            MYSQL_ROOT_PASSWORD: admin2024
+            MYSQL_USER: root
+            MYSQL_PASSWORD: admin2024
+        volumes:
+            - db-data:/var/lib/mysql
+        networks:
+            - app-network
+    # Service pour Nginx
+    laravel_nginx:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - "8000:80"
+        environment:
+            DB_CONNECTION: mysql
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_DATABASE: CraftedBy
+            DB_USERNAME: root
+            DB_PASSWORD: admin2024
+        command: ./run.sh
+        volumes:
+            - ./run.sh:/app/run.sh
+            - ./seed.sh:/app/seed.sh
+            - laravel-data:/var/www/html/storage
+        depends_on:
+            - db
+        networks:
+            - app-network
+#
+    nginx:
+        image: nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        networks:
+            - app-network
+    #         Service pour Adminer
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8888:8080"
+        networks:
+            - app-network
+volumes:
+    db-data:
+    laravel-data:
+        driver: local
+networks:
+    app-network:
+#version: "3.8"
+#services:
+#    db:
+#        image: postgres
+#        restart: always
+#        environment:
+#            POSTGRES_DB: craftedby_db
+#            POSTGRES_PASSWORD: example
+#        volumes:
+#            - pg-data:/var/lib/postgresql/data
+#        networks:
+#            - craftedby-network
+#
+#
+#    backend:
+#        build: .
+#        ports:
+#            - 8081:80
+#        environment:
+#            DB_CONNECTION: pgsql
+#            DB_HOST: db
+#            DB_PORT: 5432
+#            DB_DATABASE: craftedby_db
+#            DB_USERNAME: postgres
+#            DB_PASSWORD: example
+#        volumes:
+#            - ./post-run.sh:/app/post-run.sh
+#        networks:
+#            - craftedby-network
+#
+#    adminer:
+#        image: adminer
+#        restart: always
+#        ports:
+#            - 8080:8080
+#        networks:
+#            - craftedby-network
+#
+#volumes:
+#    pg-data:
+#
+#networks:
+#    craftedby-network:
