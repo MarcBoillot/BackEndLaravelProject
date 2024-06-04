@@ -19,7 +19,7 @@ class CrafterFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::inRandomOrder()->first(),
+            'user_id' => User::doesntHave('crafter')->inRandomOrder()->first()->id,
             'information' => fake()->text(),
             'story' => fake()->text(),
             'crafting_process' => fake()->text(),

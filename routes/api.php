@@ -5,6 +5,7 @@ use App\Http\Controllers\CrafterController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +51,9 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::post('/material', [MaterialController::class,'store']);
     Route::post('/material/{material}', [MaterialController::class,'update']);
     Route::post('/material', [MaterialController::class,'destroy']);
+
+    Route::post('/paymentIntents', [StripeController::class,'storeIntents']);
+
 });
 
 
